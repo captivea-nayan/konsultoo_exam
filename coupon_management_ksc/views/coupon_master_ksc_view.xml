@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="coupon_master_ksc_list_view" model="ir.ui.view">
+            <field name="name">coupon.master.ksc.list.view</field>
+            <field name="model">coupon.master.ksc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="coupon_value"/>
+                    <field name="generator_id"/>
+                    <field name="currency_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="coupon_master_ksc_form_view" model="ir.ui.view">
+            <field name="name">coupon.master.ksc.form.view</field>
+            <field name="model">coupon.master.ksc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                            </group>
+                            <group>
+                                <field name="coupon_value"/>
+                                <field name="generator_id"/>
+                                <field name="currency_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="coupon_master_ksc_action_menu_view" model="ir.actions.act_window">
+            <field name="name">Coupon Master</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">coupon.master.ksc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="coupon_master_ksc_main_menu_id" name="Coupon Master" parent="coupon_management_ksc_main_menu_id"
+                  action="coupon_master_ksc_action_menu_view"/>
+    </data>
+</odoo>

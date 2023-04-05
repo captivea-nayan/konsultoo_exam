@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="report_coupon_generate_action_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <br/>
+                        <br/>
+                        <ul>
+                            <h2>
+                                <t t-if="name">
+                                    <t t-esc="name"/>
+                                </t>
+                            </h2>
+
+                            <h1>Coupon Data</h1>
+                            <li>State Name :
+                                <span t-field="o.number_of_coupon"/>
+                            </li>
+                            <li>Other information are mentioned below:-</li>
+                            <table width="100%" style="border:px solid black;border-collapse:collapse;">
+                                <tr>
+                                    <th width="30">State Name</th>
+                                    <th width="30">City Name</th>
+                                </tr>
+                                <t t-foreach="o.coupons_ids" t-as="c">
+                                    <tr>
+                                        <td>
+                                            <span t-field="c.generator_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="c.name"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                            <t t-foreach="o.coupons_ids" t-as="c">
+                                <span t-field="c.name"/>
+                                and State is
+                                <span t-field="c.coupon_value"/>
+                            </t>
+                            <t t-foreach="o.currency_id" t-as="sl">
+                                <span t-field="sl.name"/>
+                            </t>
+                        </ul>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <template id="report_coupon_generator">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="coupon_management_ksc.report_coupon_generate_action_template"/>
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>

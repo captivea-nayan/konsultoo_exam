@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_coupon_generator_id" model="ir.actions.report">
+            <field name="name">Coupon Data</field>
+            <field name="model">coupon.generator.ksc</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">coupon_management_ksc.report_coupon_generator</field>
+            <field name="print_report_name">(object.name)</field>
+            <field name="binding_model_id" ref="coupon_management_ksc.model_coupon_generate_ksc"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

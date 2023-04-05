@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_coupon_generator_document">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <table>
+                            <div class="oe_structure"/>
+                            <div class="row mt32 mb32" id="informations">
+                                <div class="col-auto col-3 mw-100 mb-2">
+                                    <strong>Name:</strong>
+                                    <p class="m-0" t-field="doc.name"/>
+                                </div>
+                                <div t-if="doc.start_date" class="col-auto col-3 mw-100 mb-2">
+                                    <strong>start date :</strong>
+                                    <p class="m-0" t-field="doc.start_date"/>
+                                </div>
+                                <div t-if="doc.end_date" class="col-auto col-3 mw-100 mb-2">
+                                    <strong>end date :</strong>
+                                    <p class="m-0" t-field="doc.end_date"/>
+                                </div>
+                            </div>
+
+                        </table>
+
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_coupon_generator">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="coupon_genrator.report_coupon_generator_document"/>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+coupon_management_ksc.access_coupon_generator_ksc,access_coupon_generator_ksc,coupon_management_ksc.model_coupon_generator_ksc,base.group_user,1,1,1,1
+coupon_management_ksc.access_coupon_master_ksc,access_coupon_master_ksc,coupon_management_ksc.model_coupon_master_ksc,base.group_user,1,1,1,1
